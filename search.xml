@@ -741,9 +741,9 @@
       
         <tags>
             
-            <tag> docker </tag>
-            
             <tag> jenkins </tag>
+            
+            <tag> docker </tag>
             
         </tags>
       
@@ -818,9 +818,9 @@
       
         <tags>
             
-            <tag> docker </tag>
-            
             <tag> jenkins </tag>
+            
+            <tag> docker </tag>
             
         </tags>
       
@@ -953,11 +953,11 @@
       
         <tags>
             
+            <tag> github </tag>
+            
             <tag> blog </tag>
             
             <tag> hexo </tag>
-            
-            <tag> github </tag>
             
         </tags>
       
