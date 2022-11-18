@@ -20,7 +20,6 @@ categories:
 ### 创建基本的会话
 
 ``` java
-package com.hulin.zk;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -33,7 +32,7 @@ public class MyCreateSession implements Watcher {
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
     public static void main(String[] args) throws Exception {
-        ZooKeeper zooKeeper = new ZooKeeper("10.28.200.233:2181",
+        ZooKeeper zooKeeper = new ZooKeeper("xx.xx.xx.xx:2181",
                 5000,
                 new MyCreateSession());
         System.out.println(zooKeeper.getState());
@@ -64,7 +63,6 @@ received watched event:WatchedEvent state:SyncConnected type:None path:null
 ### 创建复用的会话连接
 
 ``` java
-package com.hulin.zk;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -77,7 +75,7 @@ public class MyCreateUsageSession implements Watcher {
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
     public static void main(String[] args) throws Exception {
-        ZooKeeper zooKeeper = new ZooKeeper("10.28.200.233:2181",
+        ZooKeeper zooKeeper = new ZooKeeper("xx.xx.xx.xx:2181",
                 5000,
                 new MyCreateUsageSession());
         countDownLatch.await();
@@ -85,14 +83,14 @@ public class MyCreateUsageSession implements Watcher {
         byte[] password = zooKeeper.getSessionPasswd();
 
         //Use illegal SessionId and SessionPassWd
-        zooKeeper = new ZooKeeper("10.28.200.233:2181",
+        zooKeeper = new ZooKeeper("xx.xx.xx.xx:2181",
                 5000,
                 new MyCreateSession(),
                 1L,
                 "test".getBytes());
 
         //Use correct SessionId and SessionPassWd
-        zooKeeper = new ZooKeeper("10.28.200.233:2181",
+        zooKeeper = new ZooKeeper("xx.xx.xx.xx:2181",
                 5000,
                 new MyCreateSession(),
                 sessionID,
@@ -145,7 +143,6 @@ void create(final String path, byte data[], List<ACL> acl, CreateMode createMode
 ### 使用同步方法创建一个节点
 
 ``` java
-package com.hulin.zk;
 
 import org.apache.zookeeper.*;
 
@@ -156,7 +153,7 @@ public class CreateSyncNode implements Watcher {
     private static CountDownLatch downLatch = new CountDownLatch(1);
 
     public static void main(String[] args) throws Exception {
-        ZooKeeper zooKeeper = new ZooKeeper("10.28.200.233:2181",
+        ZooKeeper zooKeeper = new ZooKeeper("xx.xx.xx.xx:2181",
                 5000,
                 new CreateSyncNode());
         downLatch.await();
@@ -191,7 +188,6 @@ Success created znode/zk-test-ephemeral-0000000006
 ### 使用异步创建节点
 
 ``` java
-package com.hulin.zk;
 
 import org.apache.zookeeper.*;
 
@@ -201,7 +197,7 @@ public class CreateAsyncNode implements Watcher {
     private static CountDownLatch count = new CountDownLatch(1);
 
     public static void main(String[] args) throws Exception {
-        ZooKeeper zooKeeper = new ZooKeeper("10.28.200.233:2181",
+        ZooKeeper zooKeeper = new ZooKeeper("xx.xx.xx.xx:2181",
                 5000,
                 new CreateAsyncNode());
         count.await();
@@ -278,7 +274,6 @@ void processResult(int rc, String path, Object ctx, String name);
 #### 同步方法
 
 ``` java
-package com.hulin.zk;
 
 import org.apache.zookeeper.*;
 
@@ -290,7 +285,7 @@ public class MyGetChildren implements Watcher {
 
     public static void main(String[] args) throws Exception {
         // 使用集群模式，且默认的根目录是/hulin
-        zooKeeper = new ZooKeeper("10.28.200.233:2181,10.28.200.234:2181,10.28.200.235:2181/hulin",
+        zooKeeper = new ZooKeeper("xx.xx.xx.xx:2181,xx.xx.xx.xx:2181,xx.xx.xx.xx:2181/hulin",
                 5000,
                 new MyGetChildren());
         count.await();

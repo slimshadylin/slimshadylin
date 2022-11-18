@@ -42,9 +42,9 @@ vim zoo.cfg
 // 添加内容
 dataDir=/data1/hulin/zookeeper/data
 dataLogDir=/data1/hulin/zookeeper/log
-server.1=10.28.200.233:2888:3888
-server.2=10.28.200.234:2888:3888
-server.3=10.28.200.235:2888:3888
+server.1=xx.xx.xx.xx:2888:3888
+server.2=xx.xx.xx.xx:2888:3888
+server.3=xx.xx.xx.xx:2888:3888
 #开启四字命令
 4lw.commands.whitelist=*
 // 在dataDir目录下新建一个myid文件，并写入对应的server.ID的id
@@ -56,7 +56,7 @@ echo 1 > /data1/hulin/zookeeper/data/myid
 
 * `df -lh`找到一个文件夹比较大的挂载点,把`dataDir`和`dataLogDir`放在该目录里面
 * 集群模式下,每个服务器都需要执行以上操作,注意`每个myid文件和server.ID中的ID一致`
-* 复制文件的命令:`scp -P 51668 apache-zookeeper-3.6.2-bin.tar.gz bbd@10.28.200.234:/home/bbd/hulin`
+* 复制文件的命令:`scp -P 51668 apache-zookeeper-3.6.2-bin.tar.gz bbd@xx.xx.xx.xx:/home/bbd/hulin`
 
 ### 修改环境变量
 
