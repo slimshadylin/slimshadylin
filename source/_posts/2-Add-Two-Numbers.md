@@ -10,7 +10,7 @@ summary:
 tags:
 - leetcode
 categories:
-- leetcode
+- 算法
 ---
 
 ## 题目
@@ -41,7 +41,7 @@ The number of nodes in each linked list is in the range [1, 100].
 0 <= Node.val <= 9
 It is guaranteed that the list represents a number that does not have leading zeros.
 
-## 题目大意
+### 题目大意
 
 1. 两个链表表示两个数字，但是数字的值需要反转链表后得到.
 
@@ -49,13 +49,13 @@ It is guaranteed that the list represents a number that does not have leading ze
 
 3. 题目会保证数据链表的头节点不会为零.
 
-## 解体思路
+### 解体思路
 
 1. 两个数字长度不相等时，短的链表末尾补零.
 
 2. 需要处理进位的问题，极端情况可能需要新加一个节点，比如999+1=1000.
 
-## 代码实现
+### 代码实现
 
 ``` java
 public class Solution {

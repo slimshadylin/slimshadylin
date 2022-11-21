@@ -106,3 +106,7 @@ deploy:
   repo: https://gitee.com/slimshadylin/slimshadylin.git
   # repo: https://github.com/slimshadylin/slimshadylin.github.io.git
   branch: master
+
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'

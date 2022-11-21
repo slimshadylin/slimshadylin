@@ -9,24 +9,24 @@ summary:
 tags:
 - leetcode
 categories:
-- leetcode
+- 算法
 ---
 
 ## 题目
 
 https://leetcode.com/problems/ugly-number/
 
-## 题目大意
+### 题目大意
 
-定义了一种数字丑数：只能被2、3、5整除，
+定义了一种数字丑数：只能被2、3、5整除
 
-## 解题思路
+### 解题思路
 
 简单的方法是用给定的数字除5、3、2，递归执行，最后剩下1表示能整除
 
-## 代码实现
+### 代码实现
 
-```
+``` java
 class Solution {
     public boolean isUgly(int n) {
         while (n >0 && n%5 == 0) {
