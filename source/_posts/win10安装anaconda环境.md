@@ -13,7 +13,7 @@ categories:
 - 环境搭建
 ---
 
-## 下载Anaconda
+# 下载Anaconda
 
 1. 下载地址: <https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/>, 选择windows64位安装包,如下图所示
     ![安装包](install.png)
@@ -27,7 +27,7 @@ categories:
     E:\anaconda3\Scripts
     ```
 
-## 查看和更新包
+# 查看和更新包
 
 1. 进入`E:\anaconda3\Scripts`目录,里面包含了pip.exe程序,在该目录执行cmd,然后`pip list`可以看到anaconda安装的所有包
 
@@ -44,7 +44,7 @@ categories:
     pip install ssl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
     ```
 
-## 遇到的问题
+# 遇到的问题
 
 1. anaconda 的pip 和系统的python3 的pip冲突
 

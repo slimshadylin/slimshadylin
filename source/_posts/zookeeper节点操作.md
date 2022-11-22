@@ -14,7 +14,7 @@ categories:
 - 编程
 ---
 
-## 创建
+# 创建
 
 使用`create`命令可以创建Zookeeper节点，用法如下：
 > create [-s] [-e] path data acl
@@ -37,9 +37,9 @@ create [-s] [-e] [-c] [-t ttl] path [data] [acl]
 Created /zk-book
 ```
 
-## 读取
+# 读取
 
-### ls
+## ls
 
 1. 使用ls命令，可以查看指定路径下的节点
 
@@ -52,7 +52,7 @@ Created /zk-book
 
     可以看到，zookeeper服务启动会在根目录下，默认创建一个叫做`zookeeper`的保留节点
 
-### get
+## get
 
 1. `get`，获取指定节点的数据内容和属性
     >get [-s] [-w] path
@@ -80,7 +80,7 @@ Created /zk-book
     可以看到保留节点是没有内容的
     ![节点操作](get.png)
 
-## 更新
+# 更新
 
 1. `set`,更新节点数据
 
@@ -106,7 +106,7 @@ Created /zk-book
 
 * 可以看到，更新节点后`mZxid`+1，`dataVersion`+1
 
-## 删除
+# 删除
 
 1. `delete`，删除节点信息
 

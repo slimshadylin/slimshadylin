@@ -14,9 +14,9 @@ categories:
 - 编程
 ---
 
-## 集群模式
+# 集群模式
 
-### 下载ZooKeeper
+## 下载ZooKeeper
 
 1. 官方网站: https://zookeeper.apache.org/releases.html
 2. 一定要下载bin.tar.gz文件,另外一个是源码包
@@ -28,7 +28,7 @@ wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.6.2/apach
 tar -xzvf apache-zookeeper-3.6.2-bin.tar.gz
 ```
 
-### 修改配置文件
+## 修改配置文件
 
 1. 修改`"%ZK_HOME%"/conf`下的`zoo.cfg`
 
@@ -58,7 +58,7 @@ echo 1 > /data1/hulin/zookeeper/data/myid
 * 集群模式下,每个服务器都需要执行以上操作,注意`每个myid文件和server.ID中的ID一致`
 * 复制文件的命令:`scp -P 51668 apache-zookeeper-3.6.2-bin.tar.gz bbd@xx.xx.xx.xx:/home/bbd/hulin`
 
-### 修改环境变量
+## 修改环境变量
 
 1. 此时进入`"%ZK_HOME%"/bin`目录执行启动脚本`sudo sh zkServer.sh start`，如果出现如下报错
 
@@ -76,7 +76,7 @@ echo 1 > /data1/hulin/zookeeper/data/myid
 
 ![环境变量](env.png)
 
-### 启动服务
+## 启动服务
 
 * 在`"%ZK_HOME%"/bin`目录下有一个`zkServer.sh`的启动脚本, 执行命令`sudo sh zkServer.sh start`，当回显如下时，表示启动成功，如果启动失败，在`"%ZK_HOME%"/logs`下查看日志的打印，里面会有失败的原因，多半都是上面的配置没有写对，仔细检查一下即可
 
@@ -87,7 +87,7 @@ Using config: /home/bbd/hulin/apache-zookeeper-3.6.2-bin/bin/../conf/zoo.cfg
 Starting zookeeper ... STARTED
 ```
 
-### 验证服务
+## 验证服务
 
 1. 输入命令`telnet 127.0.0.1 2181`，然后输入`stat`:
 

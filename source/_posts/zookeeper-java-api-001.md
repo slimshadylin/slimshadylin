@@ -15,9 +15,9 @@ categories:
 - 编程
 ---
 
-## 创建会话
+# 创建会话
 
-### 创建基本的会话
+## 创建基本的会话
 
 ``` java
 
@@ -60,7 +60,7 @@ CONNECTING
 received watched event:WatchedEvent state:SyncConnected type:None path:null
 ```
 
-### 创建复用的会话连接
+## 创建复用的会话连接
 
 ``` java
 
@@ -115,9 +115,9 @@ received watched event:WatchedEvent state:Disconnected type:None path:null
 received watched event:WatchedEvent state:SyncConnected type:None path:null
 ```
 
-## 创建节点
+# 创建节点
 
-### 构造方法
+## 构造方法
 
 ``` java
 // 同步
@@ -140,7 +140,7 @@ void create(final String path, byte data[], List<ACL> acl, CreateMode createMode
 * `cb` 异步回调函数
 * `ctx` 传递一个对象，通常是一个上下文（Context）信息
 
-### 使用同步方法创建一个节点
+## 使用同步方法创建一个节点
 
 ``` java
 
@@ -185,7 +185,7 @@ Success created znode/zk-test-ephemeral
 Success created znode/zk-test-ephemeral-0000000006
 ```
 
-### 使用异步创建节点
+## 使用异步创建节点
 
 ``` java
 
@@ -247,7 +247,7 @@ Create path result: [-110, /zk-test-ephemeral-, I am contex，treal path name:nu
 Create path result: [0, /zk-test-ephemeral-, I am Context，real path name:/zk-test-ephemeral-0000000009
 ```
 
-### 异步回调参数详解
+## 异步回调参数详解
 
 ``` java
 void processResult(int rc, String path, Object ctx, String name);
@@ -262,16 +262,16 @@ void processResult(int rc, String path, Object ctx, String name);
 * `ctx` 接口调用时传入的ctx值
 * `name` 实际的在服务端创建的节点名
 
-## 读取数据
+# 读取数据
 
-### 获取子节点
+## 获取子节点
 
-#### getChildren构造方法
+## getChildren构造方法
 
 ``` java
 ```
 
-#### 同步方法
+## 同步方法
 
 ``` java
 

@@ -13,7 +13,7 @@ categories:
 - 环境搭建
 ---
 
-## settings
+# settings
 
 ``` json
     {
@@ -43,7 +43,7 @@ categories:
         // 正式
         "*.txt": "robot -v URL:http://dataapi.bbdservice.com -v dbHost:mysql.read.bbdops.com -v dbPort:53606 -v dbUserName:dp_app_reader -v dbPassword:bEisnDlBMrUWdnvp -v newDbHost:10.28.121.11 -v newDbPort:60114 -v newDbUserName:bbd_dp_read -v newDbPassword:v9PkZlUZ6CvRL1iYj6gs -d results $fullFileName",
         // 测试
-        // "*.txt": "-v URL:http://10.28.200.214:18080 -v dbHost:10.28.100.51 -v dbPort:3306 -v dbUserName:root -v dbPassword:Dataom123!@## -v newDbHost:10.28.100.51 -v newDbPort:3306 -v newDbUserName:root -v newDbPassword:Dataom123!@## -d results  $fullFileName",
+        // "*.txt": "-v URL:http://10.28.200.214:18080 -v dbHost:10.28.100.51 -v dbPort:3306 -v dbUserName:root -v dbPassword:Dataom123!@# -v newDbHost:10.28.100.51 -v newDbPort:3306 -v newDbUserName:root -v newDbPassword:Dataom123!@# -d results  $fullFileName",
     },
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
@@ -151,7 +151,7 @@ categories:
     }
 ```
 
-## python文件头
+# python文件头
 
 1. 依次点击"File" -> "Preference" -> "User Snippets"
 
@@ -169,7 +169,7 @@ categories:
                 "prefix": "header",
                 "body": [
                     "#!/usr/bin/env python",
-                    "## -*- encoding: utf-8 -*-",
+                    "# -*- encoding: utf-8 -*-",
                     "'''",
                     "@Author: Hulin",
                     "@Date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}",
@@ -180,9 +180,9 @@ categories:
         }
     ```
 
-## vscode 同步配置
+# vscode 同步配置
 
-### 上传同步
+## 上传同步
 
 1. 安装Settings Sync
 

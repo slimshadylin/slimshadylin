@@ -13,7 +13,7 @@ categories:
 - 编程
 ---
 
-## 常用命令
+# 常用命令
 
 1. FROM imaage_name:tag
     定义了使用哪个基础镜像启动构建流程

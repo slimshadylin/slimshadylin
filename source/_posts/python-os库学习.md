@@ -14,9 +14,9 @@ categories:
 - 编程
 ---
 
-## 目录操作
+# 目录操作
 
-### 常见命令
+## 常见命令
 
 1. `pwd = os.getcwd()`: 获取当前运行程序的目录
 2. `os.chdir(path)`: 切换目录
@@ -26,7 +26,7 @@ categories:
 6. `file_list = os.listdir(path)`: 查看文件夹下的文件及文件夹名称
 7. `file = os.open(path, "w", encoding)`: 创建文件;  `file.close()`: 关闭文件
 
-### 常见操作
+## 常见操作
 
 ``` python
 1.获取当前文件路径
@@ -64,9 +64,9 @@ print(os.path.abspath(os.path.join(os.getcwd(), "../..")))
 E:\
 ```
 
-## 文件的读写
+# 文件的读写
 
-### 基本读写
+## 基本读写
 
 ``` python
 1.读文件
@@ -85,7 +85,7 @@ with open("file_name.txt", "a", encoding="utf-8") as f:
     file.flush()
 ```
 
-### 读取文件的异常处理
+## 读取文件的异常处理
 
 读取文件的时候,可能会出现文件找不到的问题
 

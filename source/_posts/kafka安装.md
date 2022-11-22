@@ -13,11 +13,11 @@ categories:
 - 编程
 ---
 
-## 下载
+# 下载
 
 官网下载地址：<https://www.apache.org/dyn/closer.cgi?path=/kafka/2.6.0/kafka_2.13-2.6.0.tgz>
 
-### 安装
+## 安装
 
 1. 下载
 
@@ -103,7 +103,7 @@ categories:
 
 8. 注意启动的时候保持`logs.dir`文件夹是空的，不然可能无法启动
 
-## 生产与消费
+# 生产与消费
 
 1. 创建一个分区为4，副本因子为3的主题
 

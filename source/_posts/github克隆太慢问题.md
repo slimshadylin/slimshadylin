@@ -13,14 +13,14 @@ categories:
 - 环境搭建
 ---
 
-## 解决github克隆太慢的问题
+# 解决github克隆太慢的问题
 
-### 思路
+## 思路
 
 git clone特别慢是因为github.global.ssl.fastly.net域名被限制了。
 只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–>域名的映射，刷新DNS缓存便可。
 
-### 执行步骤
+## 执行步骤
 
 1. 打开网址<https://github.com.ipaddress.com/>，分别搜索
 

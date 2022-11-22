@@ -14,7 +14,7 @@ categories:
 - 编程
 ---
 
-## 基本配置
+# 基本配置
 
 zookeeper基本配置包括三个`clientPort`，`daraDir`，`tickTime`
 
@@ -32,7 +32,7 @@ zookeeper基本配置包括三个`clientPort`，`daraDir`，`tickTime`
     * 该参数有默认值:3000， 单位是毫秒， 可选配置，不支持系统属性配置方式{`启动时通过命令行添加`};
     * 该参数时zookeeper的最小时间单元长度，很多运行时的时间间隔都是使用`tickTime`的倍数来表示的;例如，回话最小超时时间默认是`2*tickTime`.
 
-### 高级参数配置
+## 高级参数配置
 
 1. `dataLogDir`:
     * 该参数有默认值，默认值和`dataDir`目录一致，可选配置，不支持系统属性配置方式{`启动时通过命令行添加`};

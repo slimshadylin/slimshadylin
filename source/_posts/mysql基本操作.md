@@ -13,9 +13,9 @@ categories:
 - 数据库
 ---
 
-## Mysq基本操作
+# Mysq基本操作
 
-### 创建数据库
+## 创建数据库
 
 ``` mysql
 CREATE DATABASE test;

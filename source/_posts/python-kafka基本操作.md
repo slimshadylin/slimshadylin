@@ -14,7 +14,7 @@ categories:
 - 编程
 ---
 
-## 安装
+# 安装
 
 > pip install kafka-python
 
@@ -56,7 +56,7 @@ D:\anaconda3\Scripts>>
 >D:\anaconda3\Scripts;
 >D:\anaconda3\Library\bin;
 
-## Producer
+# Producer
 
 ```python
 from kafka import KafkaProducer
@@ -114,7 +114,7 @@ producer.flush()
 producer = KafkaProducer(retries=5))
 ```
 
-## 参考文档
+# 参考文档
 
 [kafka-python github地址](https://github.com/dpkp/kafka-python)
 [kafka-python 官网](https://pypi.org/project/kafka-python/)

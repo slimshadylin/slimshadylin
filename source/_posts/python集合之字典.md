@@ -14,7 +14,7 @@ categories:
 - 编程
 ---
 
-## 字典创建
+# 字典创建
 
 1. 使用花括号{}表示创建一个空字典
 
@@ -26,7 +26,7 @@ categories:
     alien = {"color": "green"}
     ```
 
-## 字典的访问和修改
+# 字典的访问和修改
 
 1. 访问的方式有两种, alien["color"], alien.get("color")
 
@@ -45,7 +45,7 @@ categories:
     this
     ```
 
-## 字典的遍历
+# 字典的遍历
 
 ``` python
 遍历键值

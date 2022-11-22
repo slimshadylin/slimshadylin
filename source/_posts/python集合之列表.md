@@ -13,14 +13,14 @@ categories:
 - 编程
 ---
 
-## 列表的声明
+# 列表的声明
 
 ``` python
 bicyles = ["trek", "cannondale", "redline", "specilized"]
 names = []
 ```
 
-## 列表的访问
+# 列表的访问
 
 列表的访问通过下标的形式,从零开始,越界会出现异常
 
@@ -37,7 +37,7 @@ IndexError: list index out of range
 >>>
 ```
 
-## 列表的添加、修改、和删除
+# 列表的添加、修改、和删除
 
 1. 添加方法:append(末尾添加),insert(指定位置插入)
 2. 修改:针对索引操作
@@ -75,7 +75,7 @@ IndexError: list index out of range
   ['taxi', 'redline', 'specilized', 'honda']
   ```
 
-### del和pop的区别
+## del和pop的区别
 
 del没有返回值,pop有返回值,可以赋值给其他变量使用
 
@@ -93,7 +93,7 @@ SyntaxError: invalid syntax
 ['trek', 'taxi', 'redline', 'specilized', 'honda']
 ```
 
-## 列表的排序
+# 列表的排序
 
 1. sort()会默认按照字母顺序排序
 2. sorted()不会修改原来的列表,只是给一个临时的排好序的列表
@@ -122,9 +122,9 @@ SyntaxError: invalid syntax
 5
 ```
 
-## 列表的遍历
+# 列表的遍历
 
-### for循环
+## for循环
 
 使用for循环进行列表的遍历
 
@@ -138,7 +138,7 @@ Alan
 Jim
 ```
 
-### 数值型列表
+## 数值型列表
 
 使用range()函数可以轻松的创建一个数值型列表
 
@@ -158,7 +158,7 @@ for value in range(1, 12, 2):
 11
 ```
 
-### 列表解析式
+## 列表解析式
 
 ``` python
 sequence = [x**2 for x in range(1, 5)]
@@ -167,7 +167,7 @@ print(sequence)
 [1, 4, 9, 16]
 ```
 
-### 列表的切片
+## 列表的切片
 
 1. 左闭右开
 2. 冒号的一边没有值,默认到边界

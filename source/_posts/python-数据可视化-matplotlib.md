@@ -13,13 +13,13 @@ categories:
 - 编程
 ---
 
-## 绘制简单的图表
+# 绘制简单的图表
 
-### 安装
+## 安装
 
 `` pip install --user matplotlib`
 
-### 绘制一个折线图
+## 绘制一个折线图
 
 ``` python
 import matplotlib.pyplot as plt

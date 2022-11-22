@@ -13,7 +13,7 @@ categories:
 - 算法
 ---
 
-## 题目
+# 题目
 
 Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
 
@@ -51,12 +51,12 @@ nums2.length == n
 1 <= m + n <= 2000
 -106 <= nums1[i], nums2[i] <= 106
 
-### 题目大意
+## 题目大意
 
 给定两个有序的数组nums1和nums2.
 请找出这两个有序数组的中位数，且时间复杂度需要达到$O\left(\log(m+n)\right)$.
 
-### 解题思路
+## 解题思路
 
 [leetcode最高赞评论的中文翻译](https://zhuanlan.zhihu.com/p/70654378)
 
@@ -67,4 +67,4 @@ nums2.length == n
 3. 比较麻烦的就是二分中点的问题，如果是奇数就是中间的数值，如果是偶数个，那么是中间两个值的平均值.
 
 
-### 代码实现
+## 代码实现

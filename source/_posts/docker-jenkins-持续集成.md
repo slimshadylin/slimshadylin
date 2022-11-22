@@ -15,15 +15,15 @@ categories:
 ---
 
 
-## Red Hat Docker 安装
+# Red Hat Docker 安装
 
-### 安装docker
+## 安装docker
 
 ``` bash
 $ curl -sSL https://get.daocloud.io/docker | sh
 ```
 
-### 启动docker
+## 启动docker
 
 ``` bash
 # 启动
@@ -34,14 +34,14 @@ $ sudo systemctl restart docker
 $ sudo service docker restart
 ```
 
-### 验证是否安装成功
+## 验证是否安装成功
 
 ``` bash
 $ docker --version
 Docker version 19.03.12, build 48a66213fe
 ```
 
-### 添加源
+## 添加源
 
 ``` bash
 $ sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
@@ -51,7 +51,7 @@ grabbing file http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo to
 repo saved to /etc/yum.repos.d/docker-ce.repo
 ```
 
-### 配置镜像加速器
+## 配置镜像加速器
 
 1. 网易
 
@@ -90,15 +90,15 @@ repo saved to /etc/yum.repos.d/docker-ce.repo
     $ curl -sSL <https://cdn.jsdelivr.net/gh/lework/script/shell/docker_hub_speed_test.sh> | bash
     ```
 
-## 安装 jenkins
+# 安装 jenkins
 
-### 查看jenkins 版本
+## 查看jenkins 版本
 
 ``` bash
 $ sudo docker search jenkins
 ```
 
-### pull一个镜像
+## pull一个镜像
 
 使用官方推荐的镜像\(下载太慢记得配置镜像加速，推荐使用阿里云\)
 
@@ -126,7 +126,7 @@ Status: Downloaded newer image for jenkinsci/blueocean:latest
 docker.io/jenkinsci/blueocean:latest
 ```
 
-### 启动一个jenkins容器
+## 启动一个jenkins容器
 
 1. 参数简介
 
@@ -191,20 +191,20 @@ docker.io/jenkinsci/blueocean:latest
 
     重启images container: `sudo docker restart ${container_id}`
 
-### 删除镜像
+## 删除镜像
 
 ``` bash
 $ docker rmi jenkins
 ```
 
-## 安装jenkins插件
+# 安装jenkins插件
 
-### java项目
+## java项目
 
 1.
 
 
-## 参考文档
+# 参考文档
 
 1. [知乎： 史上最全（全平台）docker安装方法](https://zhuanlan.zhihu.com/p/54147784)
 2. [jenkins官方文档中文版](https://www.jenkins.io/zh/doc/book/installing/)

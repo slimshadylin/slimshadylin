@@ -15,9 +15,9 @@ categories:
 
 本教程基于CentOS7
 
-## 安装docker
+# 安装docker
 
-### 使用yum安装
+## 使用yum安装
 
 1. 升级yum
 
@@ -37,7 +37,7 @@ categories:
     sudo docker -v
     ```
 
-### 使用脚本安装
+## 使用脚本安装
 
 ```bash
 任意执行以下一个命令即可
@@ -48,7 +48,7 @@ $ sudo wget -qO- https://get.docker.com/ | bash
 $ curl -fsSL https://get.docker.com -o get-docker.sh
 ```
 
-## 设置USTC镜像
+# 设置USTC镜像
 
 加快docker镜像的下载速度
 编辑文件
@@ -65,7 +65,7 @@ vi /etc/docker/daemon.json
 }
 ```
 
-## docker启动与停止
+# docker启动与停止
 
 systemctl 是系统服务管理器指令
 
@@ -106,7 +106,7 @@ systemctl 是系统服务管理器指令
     sudo docker --help
     ```
 
-## 镜像相关命令
+# 镜像相关命令
 
 1. 查看镜像
 
@@ -140,7 +140,7 @@ systemctl 是系统服务管理器指令
     sudo docker rmi `docker images -q`
     ```
 
-## 容器相关命令
+# 容器相关命令
 
 1. 查看容器
 
@@ -175,15 +175,15 @@ systemctl 是系统服务管理器指令
 6. 进入容器
 
     ``` bash
-    sudo docker exec -it [container_name] /bin/bash ## 方法1
-    sudo docker attach [container_name] ## 方法2(这个不推荐使用，因为每次退出终端，container就停止运行了)
+    sudo docker exec -it [container_name] /bin/bash # 方法1
+    sudo docker attach [container_name] # 方法2(这个不推荐使用，因为每次退出终端，container就停止运行了)
     ```
 
 7. 退出容器
 
     ``` bash
-    CTRL + D ## 方法1
-    输入exit ## 方法2
+    CTRL + D # 方法1
+    输入exit # 方法2
     ```
 
 8. 停止容器
@@ -201,8 +201,8 @@ systemctl 是系统服务管理器指令
 10. 容器与宿主机之间的文件拷贝
 
     ``` bash
-    sudo docker cp [本机路径] [容器名称:路径] ## 拷入
-    sudo docker cp [容器名称:路径] [本机路径] ## 拷出
+    sudo docker cp [本机路径] [容器名称:路径] # 拷入
+    sudo docker cp [容器名称:路径] [本机路径] # 拷出
     ```
 
 11. 创建并启动新的容器
@@ -225,7 +225,7 @@ systemctl 是系统服务管理器指令
     sudo docker rm [container_id/container_name]
     ```
 
-## 备份与恢复
+# 备份与恢复
 
 1. 把container打包成image
 
@@ -245,7 +245,7 @@ systemctl 是系统服务管理器指令
     sudo docker load -i [file_name.tar]
     ```
 
-## docker仓库的搭建
+# docker仓库的搭建
 
 1. 拉取registry镜像
 

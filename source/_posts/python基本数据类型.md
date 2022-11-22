@@ -13,16 +13,16 @@ categories:
 - 编程
 ---
 
-## 字符串
+# 字符串
 
-### 字符串的声明
+## 字符串的声明
 
 ``` python
 strings = "This is a string" // 双引号
 strings = 'This is a string' // 单引号
 ```
 
-### 字符串的大小写
+## 字符串的大小写
 
 ``` python
 name = "Slim Shady"
@@ -30,7 +30,7 @@ print(name.upper())
 print(name.lower())
 ```
 
-### 字符串中使用变量
+## 字符串中使用变量
 
 * 在字符串前面加上字母f,然后把变量放在花括号内,即可进行变量的替换
 * f是format的缩写
@@ -47,7 +47,7 @@ print(name.lower())
     full_name = "{} {}".format(first_name, last_name)
     ```
 
-### 删除空白
+## 删除空白
 
 ``` python
 >>> language = " python "
@@ -59,9 +59,9 @@ print(name.lower())
 'python'
 ```
 
-## 数字
+# 数字
 
-### 数字的基本运算
+## 数字的基本运算
 
 ``` python
 >>> 2+3
@@ -84,7 +84,7 @@ print(name.lower())
 2. 浮点型小数的运算结果是不准确的,0.1 + 0.2 != 0.3
 3. 数字可以用下划线来表示,更清晰易读（注意python版本>=3.6）
 
-## 变量与常量
+# 变量与常量
 
 ``` python
 x, y, z = 0, 1, 3

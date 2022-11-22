@@ -14,7 +14,7 @@ categories:
 ---
 
 
-## 下载mysql
+# 下载mysql
 
 1. 进入[mysql](https://downloads.mysql.com/archives/community/)官网
 
@@ -30,7 +30,7 @@ categories:
     D:\mysql-5.7.31\bin;
     ```
 
-## 修改配置
+# 修改配置
 
 1. 新增`my.ini`文件，写入以下内容：
 
@@ -68,7 +68,7 @@ categories:
     default-storage-engine=INNODB
     ```
 
-## 启动服务
+# 启动服务
 
 1. 以管理员的身份进入`cmd`，依次执行如下命令：
 
@@ -136,7 +136,7 @@ categories:
     mysql>
     ```
 
-## 常用命令
+# 常用命令
 
 1. 安装完成后查看编码:
 

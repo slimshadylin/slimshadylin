@@ -14,13 +14,13 @@ categories:
 - 编程
 ---
 
-## 函数的定义
+# 函数的定义
 
 1. 形参: 定义函数时的占位符,没有实际的值
 2. 实参: 调用函数时传入的参数,是实际的值
 3. 参数的顺序,从左往右,必选参数,默认参数,可变参数,关键字参数
 
-### 必选参数
+## 必选参数
 
 参数只有一个形参,没有默认值式,调用的时候必需全部指定,不然会报错
 
@@ -39,7 +39,7 @@ Traceback (most recent call last):
 TypeError: describe_pet() missing 1 required positional argument: 'pet_name'
 ```
 
-### 默认参数--*可选参数*
+## 默认参数--*可选参数*
 
 可以看到当调用参数时,如果没有传入age的值,也能成功输出age
 
@@ -53,7 +53,7 @@ I have a dog
 My dog's name is Wangwang, age is 10
 ```
 
-### 可变参数
+## 可变参数
 
 可变参数也是一种可选参数,区别是可变参数可以不指定具体的形参,把所有的实参封装成一个tuple,可以根据tuple的索引获得传入的参数, 需要注意参数的顺序及越界问题,一般很少用这种方式
 
@@ -73,7 +73,7 @@ My dog's name is Wangwang, age is 30
 please input at least three agruments
 ```
 
-### 关键字参数
+## 关键字参数
 
 关键字参数也是一种可选参数,只是入参形式必须使用dict类型,需要注意传入的key值如果和函数中定义的key不一致,不会报错,但是对应的代码不会生效,`实际开发中很容易出现问题`
 

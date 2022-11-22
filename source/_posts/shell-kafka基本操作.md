@@ -14,8 +14,8 @@ categories:
 - 编程
 ---
 
-## 创建Topic
+# 创建Topic
 
 > bin/kafka-topics.sh --zookeeper localhost:2181 --create --topic test --replication-factor 3 --partitions 3
 
-##
+#
