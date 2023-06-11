@@ -3,47 +3,46 @@ title: docker+jenkins 持续集成
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-08-25 11:54:12
 password:
 summary: docker和jenkins持续集成教程
 tags:
-- jenkins
-- docker
+  - jenkins
+  - docker
 categories:
-- 编程
+  - 编程
 ---
 
+## Red Hat Docker 安装
 
-# Red Hat Docker 安装
+### 安装 docker
 
-## 安装docker
-
-``` bash
+```bash
 $ curl -sSL https://get.daocloud.io/docker | sh
 ```
 
-## 启动docker
+### 启动 docker
 
-``` bash
-# 启动
+```bash
+## 启动
 $ sudo systemctl start docker
-# 重启
+## 重启
 $ sudo systemctl restart docker
-# 重启
+## 重启
 $ sudo service docker restart
 ```
 
-## 验证是否安装成功
+### 验证是否安装成功
 
-``` bash
+```bash
 $ docker --version
 Docker version 19.03.12, build 48a66213fe
 ```
 
-## 添加源
+### 添加源
 
-``` bash
+```bash
 $ sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 Loaded plugins: fastestmirror
 adding repo from: http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
@@ -51,58 +50,58 @@ grabbing file http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo to
 repo saved to /etc/yum.repos.d/docker-ce.repo
 ```
 
-## 配置镜像加速器
+### 配置镜像加速器
 
 1. 网易
 
-    ``` bash
-    $ sudo mkdir -p /etc/docker
+   ```bash
+   $ sudo mkdir -p /etc/docker
 
-    $ sudo tee /etc/docker/daemon.json <<-'EOF'
-    {
-        "registry-mirrors": ["http://hub-mirror.c.163.com"]
-    }
-    EOF
-    ```
+   $ sudo tee /etc/docker/daemon.json <<-'EOF'
+   {
+       "registry-mirrors": ["http://hub-mirror.c.163.com"]
+   }
+   EOF
+   ```
 
-    配置完成后记得重启`docker`服务
+   配置完成后记得重启`docker`服务
 
-    ``` bash
-    $ sudo systemctl daemon-reload
-    $ sudo systemctl restart docker
-    ```
+   ```bash
+   $ sudo systemctl daemon-reload
+   $ sudo systemctl restart docker
+   ```
 
 2. 阿里云(推荐使用)
 
-    登录 [阿里云](https://cr.console.aliyun.com/cn-hangzhou/instances/repositories)
+   登录 [阿里云](https://cr.console.aliyun.com/cn-hangzhou/instances/repositories)
 
-    选择左侧菜单`镜像加速器`，上面有配置方法和加速器地址
+   选择左侧菜单`镜像加速器`，上面有配置方法和加速器地址
 
 3. daocloud
 
-    ``` bash
-    > $ curl -sSL <https://get.daocloud.io/daotools/set_mirror.sh> | sh -s <http://f1361db2.m.daocloud.io>
-    ```
+   ```bash
+   > $ curl -sSL <https://get.daocloud.io/daotools/set_mirror.sh> | sh -s <http://f1361db2.m.daocloud.io>
+   ```
 
 4. 测试镜像下载速度的脚本
 
-    ``` bash
-    $ curl -sSL <https://cdn.jsdelivr.net/gh/lework/script/shell/docker_hub_speed_test.sh> | bash
-    ```
+   ```bash
+   $ curl -sSL <https://cdn.jsdelivr.net/gh/lework/script/shell/docker_hub_speed_test.sh> | bash
+   ```
 
-# 安装 jenkins
+## 安装 jenkins
 
-## 查看jenkins 版本
+### 查看 jenkins 版本
 
-``` bash
+```bash
 $ sudo docker search jenkins
 ```
 
-## pull一个镜像
+### pull 一个镜像
 
 使用官方推荐的镜像\(下载太慢记得配置镜像加速，推荐使用阿里云\)
 
-``` bash
+```bash
 $ sudo docker pull jenkinsci/blueocean
 Using default tag: latest
 latest: Pulling from jenkinsci/blueocean
@@ -126,86 +125,85 @@ Status: Downloaded newer image for jenkinsci/blueocean:latest
 docker.io/jenkinsci/blueocean:latest
 ```
 
-## 启动一个jenkins容器
+### 启动一个 jenkins 容器
 
 1. 参数简介
 
-    ``` bash
-    docker run \
-    -u root \
-    --name jenkins-blueocean
-    --rm \
-    -d \
-    -p 8080:8080 \
-    -p 50000:50000 \
-    -v jenkins-data:/var/jenkins_home \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    --restart=always \
-    jenkinsci/blueocean \
-    /bin/bash
-    ```
+   ```bash
+   docker run \
+   -u root \
+   --name jenkins-blueocean
+   --rm \
+   -d \
+   -p 8080:8080 \
+   -p 50000:50000 \
+   -v jenkins-data:/var/jenkins_home \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   --restart=always \
+   jenkinsci/blueocean \
+   /bin/bash
+   ```
 
-    * `-u`: 创建容器时使用的用户
-    * `--name`: Docker容器的名字
-    * `--rm`: 退出容器时会删除所有用户数据，慎用
-    * `-d`(`--detach`): 在后台运行容器（即“分离”模式）并输出容器ID。如果您不指定此选项， 则在终端窗口中输出正在运行的此容器的Docker日志。
-    * `-p`(`--publish`): 第一个,将`jenkinsci/blueocean`容器的端口8080 映射（即“发布”）到主机上的端口8080。第一个数字表示主机上的端口，而最后一个数字表示容器的端口。因此，如果您-p 49000:8080为此选项指定，则将通过端口49000访问主机上的Jenkins。
-    * `-p`: 第二个,是有多个jenkins服务时，主备之间通信使用的，单个机器可以不用
-    * `-v`: 第一个，将容器的/var/jenkins_home目录，映射到本机的jenkins-data目录（如果没有这个选项，jenkins的历史数据将不会保存，每次启动都是新的），jenkins-data目录如果不存在，会自动创建
-    * `--restart=always` 重启docker,container也会自动重启
-    * `jenkinsci/blueocean`: jenkins images，如果不存在，会自动下载，所以这个一定要和自己下载的镜像名称一致，不然会下载其他的jenkins images
-    * `/bin/bash` 自动进入容器内部
+   - `-u`: 创建容器时使用的用户
+   - `--name`: Docker 容器的名字
+   - `--rm`: 退出容器时会删除所有用户数据，慎用
+   - `-d`(`--detach`): 在后台运行容器（即“分离”模式）并输出容器 ID。如果您不指定此选项， 则在终端窗口中输出正在运行的此容器的 Docker 日志。
+   - `-p`(`--publish`): 第一个,将`jenkinsci/blueocean`容器的端口 8080 映射（即“发布”）到主机上的端口 8080。第一个数字表示主机上的端口，而最后一个数字表示容器的端口。因此，如果您-p 49000:8080 为此选项指定，则将通过端口 49000 访问主机上的 Jenkins。
+   - `-p`: 第二个,是有多个 jenkins 服务时，主备之间通信使用的，单个机器可以不用
+   - `-v`: 第一个，将容器的/var/jenkins_home 目录，映射到本机的 jenkins-data 目录（如果没有这个选项，jenkins 的历史数据将不会保存，每次启动都是新的），jenkins-data 目录如果不存在，会自动创建
+   - `--restart=always` 重启 docker,container 也会自动重启
+   - `jenkinsci/blueocean`: jenkins images，如果不存在，会自动下载，所以这个一定要和自己下载的镜像名称一致，不然会下载其他的 jenkins images
+   - `/bin/bash` 自动进入容器内部
 
 2. 创建实例
 
-    ``` bash
-    $ sudo docker run -d --name jenkins_01 -p 8081:8080 -v /home/bbd/tools/jenkins_home:/var/jenkins_01 jenkinsci/blueocean
-    3afe63de9b9eebfe486e1417e7071c3e95d9606e2a36521a7d70afa98e4c660d
-    ```
+   ```bash
+   $ sudo docker run -d --name jenkins_01 -p 8081:8080 -v /home/bbd/tools/jenkins_home:/var/jenkins_01 jenkinsci/blueocean
+   3afe63de9b9eebfe486e1417e7071c3e95d9606e2a36521a7d70afa98e4c660d
+   ```
 
-3. 查看创建的images
+3. 查看创建的 images
 
-    ``` bash
-    $ sudo docker ps | grep jenkins
-    3afe63de9b9e        jenkinsci/blueocean   "/sbin/tini -- /usr/…"   About a minute ago   Up About a minute   50000/tcp, 0.0.0.0:8081->8080/tcp   jenkins_01
-    ```
+   ```bash
+   $ sudo docker ps | grep jenkins
+   3afe63de9b9e        jenkinsci/blueocean   "/sbin/tini -- /usr/…"   About a minute ago   Up About a minute   50000/tcp, 0.0.0.0:8081->8080/tcp   jenkins_01
+   ```
 
-4. 访问web页面
+4. 访问 web 页面
 
-    `http://10.28.200.233:8081/`
-    需要输入密码，密码查看步骤5
+   `http://10.28.200.233:8081/`
+   需要输入密码，密码查看步骤 5
 
-5. 进入images内部,查看密码
+5. 进入 images 内部,查看密码
 
-    ``` bash
-    sudo docker exec -it jenkins_01 bash
-    bash-5.0$ cat /var/jenkins_home/secrets/initialAdminPassword
-    xxxxxxxxxxxxxxxxxxxx
-    ```
+   ```bash
+   sudo docker exec -it jenkins_01 bash
+   bash-5.0$ cat /var/jenkins_home/secrets/initialAdminPassword
+   xxxxxxxxxxxxxxxxxxxx
+   ```
 
 6. 其他常用命令
 
-    退出images container： `ctrl + D`
+   退出 images container： `ctrl + D`
 
-    查看images container id : `sudo docker ps | grep jenkins`
+   查看 images container id : `sudo docker ps | grep jenkins`
 
-    重启images container: `sudo docker restart ${container_id}`
+   重启 images container: `sudo docker restart ${container_id}`
 
-## 删除镜像
+### 删除镜像
 
-``` bash
+```bash
 $ docker rmi jenkins
 ```
 
-# 安装jenkins插件
+## 安装 jenkins 插件
 
-## java项目
+### java 项目
 
 1.
 
+## 参考文档
 
-# 参考文档
-
-1. [知乎： 史上最全（全平台）docker安装方法](https://zhuanlan.zhihu.com/p/54147784)
-2. [jenkins官方文档中文版](https://www.jenkins.io/zh/doc/book/installing/)
-3. [jenkins官方文档原版](https://www.jenkins.io/doc/book/installing/)
+1. [知乎： 史上最全（全平台）docker 安装方法](https://zhuanlan.zhihu.com/p/54147784)
+2. [jenkins 官方文档中文版](https://www.jenkins.io/zh/doc/book/installing/)
+3. [jenkins 官方文档原版](https://www.jenkins.io/doc/book/installing/)

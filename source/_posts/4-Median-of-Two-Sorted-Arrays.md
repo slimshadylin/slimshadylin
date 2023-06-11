@@ -3,14 +3,14 @@ title: 4.Median of Two Sorted Arrays
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2021-01-05 10:51:23
 password:
 summary:
 tags:
-- leetcode
+  - leetcode
 categories:
-- 算法
+  - 算法
 ---
 
 # 题目
@@ -53,18 +53,17 @@ nums2.length == n
 
 ## 题目大意
 
-给定两个有序的数组nums1和nums2.
+给定两个有序的数组 nums1 和 nums2.
 请找出这两个有序数组的中位数，且时间复杂度需要达到$O\left(\log(m+n)\right)$.
 
 ## 解题思路
 
-[leetcode最高赞评论的中文翻译](https://zhuanlan.zhihu.com/p/70654378)
+[leetcode 最高赞评论的中文翻译](https://zhuanlan.zhihu.com/p/70654378)
 
 1. 首先看到时间复杂度，必然会想到要使用二分.
 
 2. 由于数组是有序的，那么二分过后左半部分必然会小于右半部分(假设从小到大排序).
 
 3. 比较麻烦的就是二分中点的问题，如果是奇数就是中间的数值，如果是偶数个，那么是中间两个值的平均值.
-
 
 ## 代码实现

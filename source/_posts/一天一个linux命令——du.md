@@ -3,23 +3,24 @@ title: 一天一个linux命令——du
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-15 14:44:30
 password:
 summary: du命令详解
 tags:
-- linux
-- 磁盘
+  - linux
+  - 磁盘
 categories:
-- linux
+  - linux
 ---
 
-# du命令详解
+# du 命令详解
 
 # 常用命令
 
 # 查看文件夹大小
-``` bash
+
+```bash
 [xxx ~]$ du -h -d 1
 1.8G	./xxx
 4.0K	./.xxx
@@ -35,14 +36,16 @@ categories:
 ```
 
 # 查看文件夹所属分区
-``` bash
+
+```bash
 [xxx data1]$ df /home
 Filesystem     1K-blocks    Used Available Use% Mounted on
 /dev/sda5       xxx         xxx  xxx       10%  /
 ```
 
 # 查看文件系统分区情况
-``` bash
+
+```bash
 [xxx data1]$ df -lh
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda5       xxxG  xxxG  xxxG  xxx% /

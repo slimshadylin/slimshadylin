@@ -3,32 +3,32 @@ title: Hexo+githubPages搭建个人博客
 top: false
 cover: true # v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-08-11 13:33:24
 password:
 summary: hexo + github pages 搭建个人博客简略教程
 tags:
-- blog
-- hexo
-- github
+  - blog
+  - hexo
+  - github
 categories:
-- 随笔
+  - 随笔
 ---
 
 # 目录结构
 
-- 安装node.js
-- 安装git
-- 注册github账号
-- 安装hexo
+- 安装 node.js
+- 安装 git
+- 注册 github 账号
+- 安装 hexo
 - 写文章、发布文章
 - 绑定域名
 
-# 安装git
+# 安装 git
 
 1. 生成新的`SSH Key`
 
-> ssh-keygen -t rsa -b 4096 -C "您的Github邮箱地址"
+> ssh-keygen -t rsa -b 4096 -C "您的 Github 邮箱地址"
 
 # 绑定域名
 
@@ -37,11 +37,11 @@ categories:
 然后找到自己购买的域名页面
 ![域名管理](domain.jpg)
 
-按照如下进行编辑,github的ip地址，自己ping以下xxx.github.io即可
+按照如下进行编辑,github 的 ip 地址，自己 ping 以下 xxx.github.io 即可
 ![域名解析](domain1.jpg)
 ![域名解析](domain2.jpg)
 
-最后修改githubPages设置
+最后修改 githubPages 设置
 
 - 进入`github pages`对应的仓库首界面
 - 点击`Settings`，进入这个仓库的设置界面

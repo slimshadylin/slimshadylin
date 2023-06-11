@@ -3,32 +3,32 @@ title: python-os库学习
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-14 14:32:19
 password:
 summary: python-os库的常见用法
 tags:
-- python
-- os
+  - python
+  - os
 categories:
-- 编程
+  - 编程
 ---
 
-# 目录操作
+## 目录操作
 
-## 常见命令
+### 常见命令
 
 1. `pwd = os.getcwd()`: 获取当前运行程序的目录
 2. `os.chdir(path)`: 切换目录
-3. `dirs = os.mkdir(path, mode)`: 新建一个文件,mode默认=0777
+3. `dirs = os.mkdir(path, mode)`: 新建一个文件,mode 默认=0777
 4. `os.removedir(path)`: 递归删除文件夹及子文件
 5. `os.remove(path)`: 删除文件,如果是文件夹会报错
 6. `file_list = os.listdir(path)`: 查看文件夹下的文件及文件夹名称
-7. `file = os.open(path, "w", encoding)`: 创建文件;  `file.close()`: 关闭文件
+7. `file = os.open(path, "w", encoding)`: 创建文件; `file.close()`: 关闭文件
 
-## 常见操作
+### 常见操作
 
-``` python
+```python
 1.获取当前文件路径
 print(os.path.abspath(__file__))
 e:\Code\python-study\003-os-study.py
@@ -64,11 +64,11 @@ print(os.path.abspath(os.path.join(os.getcwd(), "../..")))
 E:\
 ```
 
-# 文件的读写
+## 文件的读写
 
-## 基本读写
+### 基本读写
 
-``` python
+```python
 1.读文件
 with open("file_name.txt", "r", encoding="utf-8") as f:
         for line in f:
@@ -85,29 +85,29 @@ with open("file_name.txt", "a", encoding="utf-8") as f:
     file.flush()
 ```
 
-## 读取文件的异常处理
+### 读取文件的异常处理
 
 读取文件的时候,可能会出现文件找不到的问题
 
-1. 判断文件是否存在
-判断文件用`os.path.isfile(path)`,判断文件夹用`os.path.exists(path)`,存在返回true,不存在返回false
+1.  判断文件是否存在
+    判断文件用`os.path.isfile(path)`,判断文件夹用`os.path.exists(path)`,存在返回 true,不存在返回 false
 
-    ``` python
-    file_path = "E:\\Code\\python-study\\001_basic_data_type1.py"
-    if os.path.isfile(file_path):
-        with open(file_path, "r", encoding="utf-8") as f:
-            for line in f:
-                print(line)
-    else:
-        print(f"file {file_path} not found.")
+        ``` python
+        file_path = "E:\\Code\\python-study\\001_basic_data_type1.py"
+        if os.path.isfile(file_path):
+            with open(file_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    print(line)
+        else:
+            print(f"file {file_path} not found.")
 
-    >>>
-    file E:\Code\python-study\001_basic_data_type1.py not found.
-    ```
+        >>>
+        file E:\Code\python-study\001_basic_data_type1.py not found.
+        ```
 
-2. 使用try except
+2.  使用 try except
 
-    ``` python
+    ```python
     if __name__ == "__main__":
         file_path = "E:\\Code\\python-study\\001_basic_data_type1.py"
         try:

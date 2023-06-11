@@ -3,23 +3,23 @@ title: zookeeper-Java-Api
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-15 18:12:32
 password:
 summary: zookeeper java-API
 tags:
-- zookeeper
-- 分布式
-- java
+  - zookeeper
+  - 分布式
+  - java
 categories:
-- 编程
+  - 编程
 ---
 
 # 创建会话
 
 ## 创建基本的会话
 
-``` java
+```java
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -55,14 +55,14 @@ public class MyCreateSession implements Watcher {
 
 输出
 
-``` java
+```java
 CONNECTING
 received watched event:WatchedEvent state:SyncConnected type:None path:null
 ```
 
 ## 创建复用的会话连接
 
-``` java
+```java
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -109,7 +109,7 @@ public class MyCreateUsageSession implements Watcher {
 
 输出
 
-``` java
+```java
 received watched event:WatchedEvent state:SyncConnected type:None path:null
 received watched event:WatchedEvent state:Disconnected type:None path:null
 received watched event:WatchedEvent state:SyncConnected type:None path:null
@@ -119,30 +119,30 @@ received watched event:WatchedEvent state:SyncConnected type:None path:null
 
 ## 构造方法
 
-``` java
+```java
 // 同步
 String create(final String path, byte data[], List<ACL> acl, CreateMode createMode)
 // 异步
 void create(final String path, byte data[], List<ACL> acl, CreateMode createMode, StringCallback cb, Object ctx)
 ```
 
-* `path` 创建的数据节点的节点路径，例如，/zk-book/fool
-* `data[]` 字节数组，是节点创建后的初始内容
-* `acl` 节点的ACL策略
-  * `Ids.OPEN_ACL_UNSAFE`：完全开放
-  * `Ids.CREATOR_ALL_ACL`：创建该znode的连接拥有所有权限
-  * `Ids.READ_ACL_UNSAFE`：所有的客户端都可读
-* `createMode` 节点类型
-  * `CreateMode.EPHEMERAL`: 临时
-  * `CreateMode.EPHEMERAL_SEQUENTIAL`: 临时顺序
-  * `CreateMode.PERSISTENT`: 持久
-  * `CreateMode.PERSISTENT_SEQUENTIAL`: 持久顺序
-* `cb` 异步回调函数
-* `ctx` 传递一个对象，通常是一个上下文（Context）信息
+- `path` 创建的数据节点的节点路径，例如，/zk-book/fool
+- `data[]` 字节数组，是节点创建后的初始内容
+- `acl` 节点的 ACL 策略
+  - `Ids.OPEN_ACL_UNSAFE`：完全开放
+  - `Ids.CREATOR_ALL_ACL`：创建该 znode 的连接拥有所有权限
+  - `Ids.READ_ACL_UNSAFE`：所有的客户端都可读
+- `createMode` 节点类型
+  - `CreateMode.EPHEMERAL`: 临时
+  - `CreateMode.EPHEMERAL_SEQUENTIAL`: 临时顺序
+  - `CreateMode.PERSISTENT`: 持久
+  - `CreateMode.PERSISTENT_SEQUENTIAL`: 持久顺序
+- `cb` 异步回调函数
+- `ctx` 传递一个对象，通常是一个上下文（Context）信息
 
 ## 使用同步方法创建一个节点
 
-``` java
+```java
 
 import org.apache.zookeeper.*;
 
@@ -180,14 +180,14 @@ public class CreateSyncNode implements Watcher {
 
 输出
 
-``` java
+```java
 Success created znode/zk-test-ephemeral
 Success created znode/zk-test-ephemeral-0000000006
 ```
 
 ## 使用异步创建节点
 
-``` java
+```java
 
 import org.apache.zookeeper.*;
 
@@ -241,7 +241,7 @@ public class MyStringCallback implements AsyncCallback.StringCallback {
 
 返回结果
 
-``` java
+```java
 Create path result: [0, /zk-test-ephemeral-, I am context，real path name:/zk-test-ephemeral-
 Create path result: [-110, /zk-test-ephemeral-, I am contex，treal path name:null
 Create path result: [0, /zk-test-ephemeral-, I am Context，real path name:/zk-test-ephemeral-0000000009
@@ -249,31 +249,32 @@ Create path result: [0, /zk-test-ephemeral-, I am Context，real path name:/zk-t
 
 ## 异步回调参数详解
 
-``` java
+```java
 void processResult(int rc, String path, Object ctx, String name);
 ```
 
-* `rc` 服务端响应码: ResultCode
-  * `0`：接口调用成功
-  * `-4`：客户端和服务端连接已断开
-  * `-110`：指定节点已存在
-  * `-112`：会话已过期
-* `path` 节点路径
-* `ctx` 接口调用时传入的ctx值
-* `name` 实际的在服务端创建的节点名
+- `rc` 服务端响应码: ResultCode
+  - `0`：接口调用成功
+  - `-4`：客户端和服务端连接已断开
+  - `-110`：指定节点已存在
+  - `-112`：会话已过期
+- `path` 节点路径
+- `ctx` 接口调用时传入的 ctx 值
+- `name` 实际的在服务端创建的节点名
 
 # 读取数据
 
 ## 获取子节点
 
-## getChildren构造方法
+## getChildren 构造方法
 
-``` java
+```java
+
 ```
 
 ## 同步方法
 
-``` java
+```java
 
 import org.apache.zookeeper.*;
 
@@ -326,7 +327,7 @@ public class MyGetChildren implements Watcher {
 
 输出
 
-``` java
+```java
 -------
 -------
 ReGet Child:[node2, node1]

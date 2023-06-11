@@ -3,20 +3,18 @@ title: mysql基本操作
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-30 21:57:30
 password:
 summary:
 tags:
-- mysql
+  - mysql
 categories:
-- 数据库
+  - 数据库
 ---
-
-# Mysq基本操作
 
 ## 创建数据库
 
-``` mysql
+```mysql
 CREATE DATABASE test;
 ```

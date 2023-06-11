@@ -7,13 +7,13 @@ mathjax: false
 date: 2023-03-20 12:49:47
 summary:
 tags:
-- leetcode
+  - leetcode
 categories:
-- 算法
-- 位运算
+  - 算法
+  - 位运算
 ---
 
-# 统计数组中出现了K次的数
+## 题目描述
 
 题目：一个数组中一种数出现了 K 次，其他数都出现了 M 次（M > 1，K < M），找出出现了 K 次的数，如果这种数出现的次数不是 K 次，则返回 -1。
 
@@ -23,7 +23,7 @@ categories:
 
 ## 代码实现
 
-``` java
+```java
 
 public int getKTimes(int arr, int k, int m) {
     int[] help = new int[32];

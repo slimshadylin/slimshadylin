@@ -3,15 +3,15 @@ title: kafka-java-api
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-17 23:54:13
 password:
 summary: kafka java api 生产者和消费者
 tags:
-- java
-- kafka
+  - java
+  - kafka
 categories:
-- 编程
+  - 编程
 ---
 
 # 生产者

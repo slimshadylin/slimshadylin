@@ -3,17 +3,17 @@ title: 2.Add Two Numbers
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2021-01-05 16:08:14
 password:
 summary:
 tags:
-- leetcode
+  - leetcode
 categories:
-- 算法
+  - 算法
 ---
 
-# 题目
+## 题目
 
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
@@ -53,11 +53,11 @@ It is guaranteed that the list represents a number that does not have leading ze
 
 1. 两个数字长度不相等时，短的链表末尾补零.
 
-2. 需要处理进位的问题，极端情况可能需要新加一个节点，比如999+1=1000.
+2. 需要处理进位的问题，极端情况可能需要新加一个节点，比如 999+1=1000.
 
 ## 代码实现
 
-``` java
+```java
 public class Solution {
     public static class ListNode {
         int val;

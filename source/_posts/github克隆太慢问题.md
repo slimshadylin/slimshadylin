@@ -3,48 +3,46 @@ title: github克隆太慢问题
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-30 21:06:27
 password:
 summary:
 tags:
-- github
+  - github
 categories:
-- 环境搭建
+  - 环境搭建
 ---
-
-# 解决github克隆太慢的问题
 
 ## 思路
 
-git clone特别慢是因为github.global.ssl.fastly.net域名被限制了。
-只要找到这个域名对应的ip地址，然后在hosts文件中加上ip–>域名的映射，刷新DNS缓存便可。
+git clone 特别慢是因为 github.global.ssl.fastly.net 域名被限制了。
+只要找到这个域名对应的 ip 地址，然后在 hosts 文件中加上 ip–>域名的映射，刷新 DNS 缓存便可。
 
 ## 执行步骤
 
 1. 打开网址<https://github.com.ipaddress.com/>，分别搜索
 
-    ``` bash
-    github.global.ssl.fastly.net
-    github.com
-    ```
+   ```bash
+   github.global.ssl.fastly.net
+   github.com
+   ```
 
-2. 得到ip
+2. 得到 ip
 
-    ![github.com](domain.png)
+   ![github.com](domain.png)
 
-3. 写入hosts
+3. 写入 hosts
 
-    ![hosts](hosts.png)
+   ![hosts](hosts.png)
 
-    ``` bash
-    199.232.69.194  github.global-ssl.fastly.net
-    140.82.114.4  github.com
-    ```
+   ```bash
+   199.232.69.194  github.global-ssl.fastly.net
+   140.82.114.4  github.com
+   ```
 
 4. 刷新缓存
-    打开cmd，执行如下命令
+   打开 cmd，执行如下命令
 
-    ``` cmd
-    ipconfig /flushdns
-    ```
+   ```cmd
+   ipconfig /flushdns
+   ```

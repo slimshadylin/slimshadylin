@@ -3,19 +3,19 @@ title: python集合之列表
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-13 23:21:04
 password:
 summary: python 列表的基本操作
 tags:
-- python
+  - python
 categories:
-- 编程
+  - 编程
 ---
 
 # 列表的声明
 
-``` python
+```python
 bicyles = ["trek", "cannondale", "redline", "specilized"]
 names = []
 ```
@@ -24,7 +24,7 @@ names = []
 
 列表的访问通过下标的形式,从零开始,越界会出现异常
 
-``` python
+```python
 >>> bicyles = ["trek", "cannondale", "redline", "specilized"]
 >>> bicyles[0]
 'trek'
@@ -41,45 +41,45 @@ IndexError: list index out of range
 
 1. 添加方法:append(末尾添加),insert(指定位置插入)
 2. 修改:针对索引操作
-3. 删除: del(没有索引时,删除整个列表), pop(没有索引时,弹出最后一个元素),remove是删除具体的值
+3. 删除: del(没有索引时,删除整个列表), pop(没有索引时,弹出最后一个元素),remove 是删除具体的值
 
-  ``` python
-  修改
-  >>> bicyles[1] = "taxi"
-  >>> bicyles
-  ['trek', 'taxi', 'redline', 'specilized']
-  添加
-  >>> bicyles.append("honda")
-  >>> bicyles
-  ['trek', 'taxi', 'redline', 'specilized', 'honda']
-  >>> bicyles.insert(0,"yamaha")
-  >>> bicyles
-  ['yamaha', 'trek', 'taxi', 'redline', 'specilized', 'honda']
-  删除
-  del 有下标删除一个元素,没有下标删除整个列表
-  >>> del bicyles[0]
-  >>> bicyles
-  ['trek', 'taxi', 'redline', 'specilized', 'honda']
-  pop 有下标删除对应的值,没有下标删除最后一个
-  >>> bicyles.pop()
-  'honda'
-  >>> bicyles
-  ['trek', 'taxi', 'redline', 'specilized']
-  >>> bicyles.pop(3)
-  'specilized'
-  >>> bicyles
-  ['trek', 'taxi', 'redline']
-  remove 删除具体的值,如果有多个相同的值,只会删除第一个
-  >>> bicyles.remove("trek")
-  >>> bicyles
-  ['taxi', 'redline', 'specilized', 'honda']
-  ```
+```python
+修改
+>>> bicyles[1] = "taxi"
+>>> bicyles
+['trek', 'taxi', 'redline', 'specilized']
+添加
+>>> bicyles.append("honda")
+>>> bicyles
+['trek', 'taxi', 'redline', 'specilized', 'honda']
+>>> bicyles.insert(0,"yamaha")
+>>> bicyles
+['yamaha', 'trek', 'taxi', 'redline', 'specilized', 'honda']
+删除
+del 有下标删除一个元素,没有下标删除整个列表
+>>> del bicyles[0]
+>>> bicyles
+['trek', 'taxi', 'redline', 'specilized', 'honda']
+pop 有下标删除对应的值,没有下标删除最后一个
+>>> bicyles.pop()
+'honda'
+>>> bicyles
+['trek', 'taxi', 'redline', 'specilized']
+>>> bicyles.pop(3)
+'specilized'
+>>> bicyles
+['trek', 'taxi', 'redline']
+remove 删除具体的值,如果有多个相同的值,只会删除第一个
+>>> bicyles.remove("trek")
+>>> bicyles
+['taxi', 'redline', 'specilized', 'honda']
+```
 
-## del和pop的区别
+## del 和 pop 的区别
 
-del没有返回值,pop有返回值,可以赋值给其他变量使用
+del 没有返回值,pop 有返回值,可以赋值给其他变量使用
 
-``` python
+```python
 >>> bicyles = ['yamaha', 'trek', 'taxi', 'redline', 'specilized', 'honda']
 >>> temp = del bicyles[0]
   File "<stdin>", line 1
@@ -98,10 +98,10 @@ SyntaxError: invalid syntax
 1. sort()会默认按照字母顺序排序
 2. sorted()不会修改原来的列表,只是给一个临时的排好序的列表
 3. reverse(),反转列表
-4. len表示列表的长度
+4. len 表示列表的长度
 5. list[-1]返回最后一个元素,当列表为空时会有异常
 
-``` python
+```python
 >>> bicyles = ['trek', 'taxi', 'redline', 'specilized', 'honda']
 >>> sorted(bicyles)
 ['honda', 'redline', 'specilized', 'taxi', 'trek']
@@ -124,11 +124,11 @@ SyntaxError: invalid syntax
 
 # 列表的遍历
 
-## for循环
+## for 循环
 
-使用for循环进行列表的遍历
+使用 for 循环进行列表的遍历
 
-``` python
+```python
 names = ["Bob", "Alan", "Jim"]
 for name in names:
     print(name)
@@ -140,9 +140,9 @@ Jim
 
 ## 数值型列表
 
-使用range()函数可以轻松的创建一个数值型列表
+使用 range()函数可以轻松的创建一个数值型列表
 
-``` python
+```python
 >>> numbers = list(range(1,5))
 >>> numbers
 [1, 2, 3, 4]
@@ -160,7 +160,7 @@ for value in range(1, 12, 2):
 
 ## 列表解析式
 
-``` python
+```python
 sequence = [x**2 for x in range(1, 5)]
 print(sequence)
 >>>
@@ -172,9 +172,9 @@ print(sequence)
 1. 左闭右开
 2. 冒号的一边没有值,默认到边界
 3. 冒号的两边没有值,直接复制整个列表
-4. 列表的反向下标从-1开始
+4. 列表的反向下标从-1 开始
 
-``` python
+```python
 >>> nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 >>> nums[1:3]
 [2, 3]

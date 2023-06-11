@@ -3,15 +3,15 @@ title: python集合之字典
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-14 08:53:35
 password:
 summary: python字典的基本操作
 tags:
-- python
-- 集合
+  - python
+  - 集合
 categories:
-- 编程
+  - 编程
 ---
 
 # 字典创建
@@ -20,34 +20,34 @@ categories:
 
 2. 也可以直接在创建字典是赋一个默认值
 
-    ``` python
-    alien = {}
+   ```python
+   alien = {}
 
-    alien = {"color": "green"}
-    ```
+   alien = {"color": "green"}
+   ```
 
 # 字典的访问和修改
 
 1. 访问的方式有两种, alien["color"], alien.get("color")
 
-2. 推荐使用get方法,当可以不存在时,直接访问键值会产生异常,get方法可以返回默认值
+2. 推荐使用 get 方法,当可以不存在时,直接访问键值会产生异常,get 方法可以返回默认值
 
-    ``` python
-    >>> alien = {"color": "green"}
-    >>> alien["a"]  // 产生异常
-    Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-    KeyError: 'a'
-    >>> alien.get("a") // 默认返回None
-    >>> print(alien.get("a"))
-    None
-    >>> print(alien.get("a","this")) // get的第二个参数可以给返回值赋一个默认值
-    this
-    ```
+   ```python
+   >>> alien = {"color": "green"}
+   >>> alien["a"]  // 产生异常
+   Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+   KeyError: 'a'
+   >>> alien.get("a") // 默认返回None
+   >>> print(alien.get("a"))
+   None
+   >>> print(alien.get("a","this")) // get的第二个参数可以给返回值赋一个默认值
+   this
+   ```
 
 # 字典的遍历
 
-``` python
+```python
 遍历键值
 user = {"name": "efermi", "age": 16, "sex": "man"}
 for key in user.keys():

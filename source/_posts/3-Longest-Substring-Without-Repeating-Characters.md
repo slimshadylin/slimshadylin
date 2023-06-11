@@ -3,14 +3,14 @@ title: 3.Longest Substring Without Repeating Characters
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2021-01-05 19:40:18
 password:
 summary:
 tags:
-- leetcode
+  - leetcode
 categories:
-- 算法
+  - 算法
 ---
 
 ## 题目
@@ -40,7 +40,7 @@ Output: 0
 
 Constraints:
 
-0 <= s.length <= 5 * 104
+0 <= s.length <= 5 \* 104
 s consists of English letters, digits, symbols and spaces.
 
 ### 题目分析
@@ -48,7 +48,5 @@ s consists of English letters, digits, symbols and spaces.
 找出没有重复字母的最长字串
 
 ### 解体思路
-
-
 
 ### 代码实现

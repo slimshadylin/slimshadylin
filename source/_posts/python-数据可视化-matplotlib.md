@@ -3,25 +3,25 @@ title: python-数据可视化-matplotlib
 top: false
 cover: false
 toc: true
-mathjax: true
+mathjax: false
 date: 2020-11-14 16:32:27
 password:
 summary: python数据可视化
 tags:
-- matplotib
+  - matplotib
 categories:
-- 编程
+  - 编程
 ---
 
-# 绘制简单的图表
+## 绘制简单的图表
 
-## 安装
+### 安装
 
 `` pip install --user matplotlib`
 
-## 绘制一个折线图
+### 绘制一个折线图
 
-``` python
+```python
 import matplotlib.pyplot as plt
 
 
